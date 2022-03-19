@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_for_fragments"
+    app:startDestination="@id/fragment_rock_onNavigator">
+
+    <fragment
+        android:id="@+id/fragment_rock_onNavigator"
+        android:name="com.example.assignment3.view.RockFragment"
+        tools:layout="@layout/fragment_rock"
+        android:label="rock"
+        >
+        <action
+            android:id="@+id/action_fragment_rock_onNavigator_to_fragment_classic_onNavigator"
+            app:destination="@id/fragment_classic_onNavigator" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_classic_onNavigator"
+        android:name="com.example.assignment3.view.ClassicFragment"
+        tools:layout="@layout/fragment_classic"
+        android:label="classic"
+        >
+        <action
+            android:id="@+id/action_fragment_classic_onNavigator_to_fragment_pop_onNavigator"
+            app:destination="@id/fragment_pop_onNavigator" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_pop_onNavigator"
+        android:name="com.example.assignment3.view.PopFragment"
+        tools:layout="@layout/fragment_pop"
+        android:label="pop"
+        >
+    </fragment>
+</navigation>
