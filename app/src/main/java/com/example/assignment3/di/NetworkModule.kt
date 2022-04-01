@@ -1,10 +1,8 @@
 package com.example.assignment3.di
 
 import android.view.Gravity.apply
-import com.example.assignment3.rest.ArtistAPI
-import com.example.assignment3.rest.MusicRepository
-import com.example.assignment3.rest.MusicRepositoryImplementation
-import com.example.assignment3.rest.RequestInterceptor
+import com.example.assignment3.presenter.MusicArtistPresenterImpl
+import com.example.assignment3.rest.*
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -27,7 +25,7 @@ class NetworkModule {
       return Retrofit.Builder()
           .baseUrl(ArtistAPI.BASE_URL)
           .addConverterFactory(GsonConverterFactory.create(gson))
-          .addCallAdapterFactory(RxJava2CallAdapterFactory.create())   //rxjava
+          .addCallAdapterFactory(RxJava2CallAdapterFactory.create())   //observable
           .client(okHttpClient)
           .build()
           .create(ArtistAPI::class.java)
@@ -61,9 +59,9 @@ class NetworkModule {
     fun providesGson() = Gson()
 
 
-    //
+
     @Provides
     fun providesMusicRepositoryImplementation(artistAPI: ArtistAPI): MusicRepository{
-        return MusicRepositoryImplementation(artistAPI)
+        return MusicRepositoryImpl(artistAPI)
     }
 }

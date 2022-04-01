@@ -13,12 +13,12 @@ class MusicApp: Application() {
     override fun onCreate() {
         super.onCreate()
 
+        //load di component
         musicComponent = DaggerMusicComponent.builder()
             .applicationModule(ApplicationModule(this))
             .build()
     }
 
-    //
     companion object{
         lateinit var musicComponent: MusicComponent
     }

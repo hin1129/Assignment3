@@ -10,7 +10,7 @@ interface MusicRepository{
 }
 
 
-class MusicRepositoryImplementation (
+class MusicRepositoryImpl (
     //api code
     private val artistAPI: ArtistAPI
     ): MusicRepository {

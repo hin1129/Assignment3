@@ -7,7 +7,7 @@ data class RockArtists(
     @SerializedName("resultCount")
     val resultCount: Int,
     @SerializedName("results")
-    val results: List<Result>,
+    val results: List<Result>,    //target
 
 
     @SerializedName("artistName")

@@ -11,7 +11,7 @@ import dagger.Component
 @Component(
     //add modules from di
     modules = [
-        NetworkModule::class, ApplicationModule::class,
+        NetworkModule::class, ApplicationModule::class, PresenterModule::class
     ]
 )
 //inject all objects from class
@@ -20,5 +20,4 @@ interface MusicComponent {
     fun inject(fragment: RockFragment)
     fun inject(fragment: ClassicFragment)
     fun inject(fragment: PopFragment)
-
 }
